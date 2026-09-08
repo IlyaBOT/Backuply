@@ -1,0 +1,9 @@
+/bin/
+/.backuply/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+key.pem
+cert.pem
+*.test
+coverage.out

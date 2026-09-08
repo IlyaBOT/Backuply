@@ -1,0 +1,21 @@
+services:
+  backuply:
+    build:
+      context: .
+    ports:
+      - "127.0.0.1:${BACKUPLY_PORT:-24800}:24800"
+    volumes:
+      - ./examples/docker.conf:/etc/backuply/backuply.conf:ro
+      - state:/var/lib/backuply
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+
+volumes:
+  state:

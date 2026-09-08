@@ -1,0 +1,16 @@
+.git
+.github
+.agents
+.codex
+.venv
+**/__pycache__
+**/*.py[cod]
+.env
+.env.*
+docs
+bin
+test
+scripts
+**/*.sqlite*
+**/key.pem
+**/cert.pem

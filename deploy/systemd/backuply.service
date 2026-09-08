@@ -1,0 +1,27 @@
+[Unit]
+Description=Backuply peer-to-peer folder synchronization
+Documentation=https://github.com/IlyaBOT/Backuply
+After=network.target
+
+[Service]
+Type=exec
+User=backuply
+Group=backuply
+StateDirectory=backuply
+StateDirectoryMode=0700
+ExecStartPre=/usr/local/bin/backuply check -config /etc/backuply/backuply.conf
+ExecStart=/usr/local/bin/backuply run -config /etc/backuply/backuply.conf
+Restart=on-failure
+RestartSec=5s
+TimeoutStopSec=45s
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/backuply /srv/backuply
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+CapabilityBoundingSet=
+
+[Install]
+WantedBy=multi-user.target

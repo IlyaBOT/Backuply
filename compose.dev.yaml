@@ -1,0 +1,12 @@
+services:
+  dev:
+    image: golang:1.26.8
+    working_dir: /workspace
+    user: "${BACKUPLY_UID:-1000}:${BACKUPLY_GID:-1000}"
+    environment:
+      GOCACHE: /tmp/backuply-cache/build
+      GOPATH: /tmp/backuply-cache/go
+      GOTOOLCHAIN: local
+    volumes:
+      - .:/workspace
+      - /tmp/backuply-go-cache:/tmp/backuply-cache
