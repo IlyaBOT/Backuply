@@ -9,4 +9,4 @@ services:
       GOTOOLCHAIN: local
     volumes:
       - .:/workspace
-      - /tmp/backuply-go-cache:/tmp/backuply-cache
+      - ./.cache/go:/tmp/backuply-cache

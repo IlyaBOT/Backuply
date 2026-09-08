@@ -9,6 +9,7 @@
 .env.*
 docs
 bin
+.cache
 test
 scripts
 **/*.sqlite*

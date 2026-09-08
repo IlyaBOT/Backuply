@@ -1,4 +1,5 @@
 /bin/
+/.cache/
 /.backuply/
 *.sqlite
 *.sqlite-shm
